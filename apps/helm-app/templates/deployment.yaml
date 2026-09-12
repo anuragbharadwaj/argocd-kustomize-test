@@ -4,7 +4,7 @@ metadata:
   name: {{ .Release.Name }}
   labels:
     app: {{ .Release.Name }}
-    managed-by: {{ .Values.labels.managed-by }}
+    managed-by: {{ index .Values.labels "managed-by" }}
     env: {{ .Values.labels.env }}
 spec:
   replicas: {{ .Values.replicaCount }}
